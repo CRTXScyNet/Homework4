@@ -22,9 +22,9 @@ public class Main {
 
         // Task three
         int speed = 124;
-        if (speed <= 60) {
+        if (speed > 0 && speed <= 60) {
             System.out.println("Если скорость " + speed + ", то  можно ездить спокойно");
-        } else {
+        } else if (speed > 60){
             System.out.println("Если скорость " + speed + ", то придется заплатить штраф");
         }
 
@@ -32,11 +32,11 @@ public class Main {
         age = 25;
         if (age >= 2 && age <= 6) {
             System.out.println("Если возраст человека равен " + age + ", то ему нужно ходить в детский сад");
-        } else if (age <= 17) {
+        } else if (age > 6 && age <= 17) {
             System.out.println("Если возраст человека равен " + age + ", то ему нужно ходить в школу");
-        } else if (age <= 24) {
+        } else if (age > 17 && age <= 24) {
             System.out.println("Если возраст человека равен " + age + ",  то его место в университете");
-        } else {
+        } else if (age > 24){
             System.out.println("Если возраст человека равен " + age + ", то ему пора ходить на работу");
         }
 
@@ -56,40 +56,31 @@ public class Main {
             System.out.println("В вагоне занято " + numberOfOccupiedPlaces + " мест ,еще есть сидячие и стоячие свободные места");
         } else if (numberOfOccupiedPlaces < 102) {
             System.out.println("В вагоне  занято " + numberOfOccupiedPlaces + " мест, есть только стоячие свободные места");
-        } else if (numberOfOccupiedPlaces > 102) {
+        } else if (numberOfOccupiedPlaces == 102) {
+            System.out.println("В вагоне  занято " + numberOfOccupiedPlaces + " места, вагон полностью заполнен");
+        } else if (numberOfOccupiedPlaces > 102){
             System.out.println("В вагоне  занято " + numberOfOccupiedPlaces + "... хотя погодите, в вагоне нет столько мест! Все на выход!");
-        } else {
-            System.out.println("В вагоне  занято " + numberOfOccupiedPlaces + " места, свободных мест больше нет");
+
         }
 
         // Task seven
-        int one = 1;
-        int two = 1;
-        int three = 1;
-        if (one > two) {
-            if (one > three) {
-                System.out.println("Переменая 'one' больше всех, она равняется числу " + one);
-            } else if (one < three) {
-                System.out.println("Переменая 'three' больше всех, она равняется числу " + three);
-            } else {
-                System.out.println("Переменные 'one' и 'three' наибольшие и равняются числу " + one);
-            }
-        } else if (one < two) {
-            if (two > three) {
-                System.out.println("Переменая 'two' больше всех, она равняется числу " + two);
-            } else if (two < three) {
-                System.out.println("Переменая 'three' больше всех, она равняется числу " + three);
-            } else {
-                System.out.println("Переменные 'two' и 'three' наибольшие и равняются числу " + two);
-            }
-        } else {
-            if (two > three) {
-                System.out.println("Переменные 'one' и 'two' наибольшие и равняются числу " + two);
-            } else if (two < three) {
-                System.out.println("Переменая 'three' больше всех, она равняется числу " + three);
-            } else {
-                System.out.println("Все переменные между собой равны, и равняются числу " + one);
-            }
+        int one = 5;
+        int two = 5;
+        int three = 5;
+        if (one > two && one > three){
+            System.out.println("Переменая 'one' больше всех, она равняется числу " + one);
+        }else if (three > two && one != three){
+            System.out.println("Переменая 'three' больше всех, она равняется числу " + three);
+        }else if (two > three && one != two){
+            System.out.println("Переменая 'two' больше всех, она равняется числу " + two);
+        }else if(one == three && one == two){
+            System.out.println("Все переменные между собой равны, и равняются числу " + one);
+        } else if (one == two) {
+            System.out.println("Переменные 'one' и 'two' наибольшие и равняются числу " + one);
+        }else if (one == three){
+            System.out.println("Переменные 'one' и 'three' наибольшие и равняются числу " + one);
+        }else {
+            System.out.println("Переменные 'two' и 'three' наибольшие и равняются числу " + two);
         }
     }
 }
